@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'default';
+$active_group = ENVIRONMENT; 
 $query_builder = TRUE;
 
 $db['default'] = array(
@@ -94,3 +94,80 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['development'] = array(
+	'dsn'	=> '',
+	'hostname' => '127.0.0.1',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'ci_subscribo',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+$db['production'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => '',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+/*
+
+$db['pdo']['hostname'] = 'mysql:host=localhost;dbname=subscrib_ci3';
+
+$db['pdo']['username'] = 'subscrib_spengu';
+
+$db['pdo']['password'] = 'Zaft1g5ub5cr1bdb!';
+
+$db['pdo']['database'] = 'subscrib_ci3';
+
+$db['pdo']['dbdriver'] = 'pdo';
+
+$db['pdo']['dbprefix'] = '';
+
+$db['pdo']['pconnect'] = TRUE;
+
+$db['pdo']['db_debug'] = TRUE;
+
+$db['pdo']['cache_on'] = FALSE;
+
+$db['pdo']['cachedir'] = '';
+
+$db['pdo']['char_set'] = 'utf8';
+
+$db['pdo']['dbcollat'] = 'utf8_general_ci';
+
+$db['pdo']['swap_pre'] = '';
+
+$db['pdo']['autoinit'] = TRUE;
+
+$db['pdo']['stricton'] = FALSE;
+*/
